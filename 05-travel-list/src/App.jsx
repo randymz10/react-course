@@ -5,11 +5,17 @@ import Stats from "./components/Stats";
 import data from "./data.js";
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  function handleAddItems(item) {
+    setItems((item) => [...items, item]);
+  }
+
   return (
     <>
       <Logo />
-      <Form />
-      <PackingList items={data} />
+      <Form onAddItems={handleAddItems}/>
+      <PackingList items={items} />
       <Stats />
     </>
   );
