@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
-import Item from "./Item";
+import Item from "./Item.jsx";
 
-function PackingList({ items }) {
+function PackingList({ items, onDeleteItem, onToggleItems }) {
   return (
     <div className="list">
       <ul>
         {items.map((item) => (
-          <Item key={item.id} item={item} />
+          <Item key={item.id} item={item} onDeleteItem={onDeleteItem} onToggleItems={onToggleItems}/>
         ))}
       </ul>
     </div>
@@ -15,6 +15,8 @@ function PackingList({ items }) {
 
 PackingList.propTypes = {
   items: PropTypes.array,
+  onDeleteItem: PropTypes.func,
+  onToggleItems: PropTypes.func
 };
 
 export default PackingList;
