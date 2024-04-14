@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 
-function AccordionItem({ num, title, text }) {
-  const [isOpen, setIsOpen] = useState(false);
+function AccordionItem({ curOpen, onOpen, num, title, text }) {
+  const isOpen = num === curOpen;
+
   function handleToggle() {
-    setIsOpen((isOpen) => !isOpen);
+    onOpen(isOpen ? null : num);
   }
   return (
     <div className={`item ${isOpen ? "open" : ""}`} onClick={handleToggle}>
@@ -17,7 +17,9 @@ function AccordionItem({ num, title, text }) {
 }
 
 AccordionItem.propTypes = {
-  num: PropTypes.string,
+  curOpen: PropTypes.number,
+  onOpen: PropTypes.func,
+  num: PropTypes.number,
   title: PropTypes.string,
   text: PropTypes.string,
 };
