@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import Friend from "./Friend";
 
-function FriendsList({ friendsList }) {
-  const friends = friendsList;
+function FriendsList({ friends }) {
+  
 
   return (
     <ul>
@@ -14,7 +14,7 @@ function FriendsList({ friendsList }) {
 }
 
 FriendsList.propTypes = {
-  friendsList: PropTypes.array,
+  friends: PropTypes.array,
 };
 
 export default FriendsList;
