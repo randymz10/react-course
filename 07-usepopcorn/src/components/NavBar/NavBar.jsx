@@ -1,16 +1,11 @@
 import Logo from "./Logo";
-import Search from "./Search";
-import NumResults from "./NumResults";
 
-function NavBar({movies}) {
-
+function NavBar({ children }) {
   return (
     <>
       <nav className="nav-bar">
-        <Logo />
-        <Search />
-        <NumResults movies={movies}/>
-      </nav>
+      <Logo />
+      {children}</nav>
     </>
   );
 }
