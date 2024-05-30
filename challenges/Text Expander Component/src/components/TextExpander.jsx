@@ -40,5 +40,5 @@ TextExpander.propTypes = {
   buttonColor: PropTypes.string,
   expanded: PropTypes.bool,
   className: PropTypes.string,
-  child: PropTypes.object,
+  children: PropTypes.object,
 };
