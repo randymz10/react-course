@@ -4,7 +4,7 @@ import { useState } from "react";
 function TextExpander({
   collapsedNumWords = 64,
   expandButtonText = "Show more",
-  collapseButtonText = "Collapse text",
+  collapseButtonText = "Show less",
   buttonColor = "#000",
   expanded = false,
   className = "",
