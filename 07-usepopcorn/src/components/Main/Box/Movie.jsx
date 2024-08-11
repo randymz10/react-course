@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 
-function Movie({ movie }) {
+function Movie({ movie, onSelectMovie }) {
   return (
-    <li>
+    <li
+      onClick={() => {
+        onSelectMovie(movie.imdbID);
+      }}
+    >
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <h3>{movie.Title}</h3>
       <div>
@@ -16,7 +20,8 @@ function Movie({ movie }) {
 }
 
 Movie.propTypes = {
-    movie : PropTypes.object,
-}
+  movie: PropTypes.object,
+  onSelectMovie: PropTypes.func,
+};
 
 export default Movie;
