@@ -16,7 +16,7 @@ function MovieList({ movies, onSelectMovie }) {
 }
 
 MovieList.propTypes = {
-  movies: PropTypes.list,
+  movies: PropTypes.array,
   onSelectMovie: PropTypes.func,
   onCloseMovie: PropTypes.func,
 };
