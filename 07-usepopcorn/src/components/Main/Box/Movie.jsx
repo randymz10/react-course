@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 
 function Movie({ movie, onSelectMovie }) {
+  function handleOnClick() {
+    onSelectMovie(movie.imdbID);
+    // console.log("Selected handleOnclick");
+  }
+
   return (
-    <li
-      onClick={() => {
-        onSelectMovie(movie.imdbID);
-      }}
-    >
+    <li onClick={handleOnClick}>
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <h3>{movie.Title}</h3>
       <div>
