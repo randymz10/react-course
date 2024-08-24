@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 function Movie({ movie, onSelectMovie }) {
   function handleOnClick() {
     onSelectMovie(movie.imdbID);
-    // console.log("Selected handleOnclick");
   }
 
   return (
