@@ -1,23 +1,30 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
+import { useKey } from "../../useKey";
 
 function Search({ query, setQuery }) {
   const inputEl = useRef(null);
 
-  useEffect(() => {
-    function callback(e) {
-      if (document.activeElement === inputEl.current) return;
+  useKey("Enter", function () {
+    if (document.activeElement === inputEl.current) return;
+    inputEl.current.focus();
+    setQuery("");
+  });
 
-      if (e.code === "Enter") {
-        inputEl.current.focus();
-        setQuery("");
-      }
-    }
+  // useEffect(() => {
+  //   function callback(e) {
+  //     if (document.activeElement === inputEl.current) return;
 
-    document.addEventListener("keydown", callback);
+  //     if (e.code === "Enter") {
+  //       inputEl.current.focus();
+  //       setQuery("");
+  //     }
+  //   }
 
-    return () => document.addEventListener("keydown", callback);
-  }, [setQuery]);
+  //   document.addEventListener("keydown", callback);
+
+  //   return () => document.addEventListener("keydown", callback);
+  // }, [setQuery]);
 
   return (
     <input

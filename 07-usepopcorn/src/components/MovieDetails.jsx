@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import StarRating from "./StarRating";
 import Loader from "./Loader";
+import { useKey } from "../useKey";
 const KEY = "4accf5d1";
 
 function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
@@ -49,19 +50,21 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     onCloseMovie();
   }
 
-  useEffect(function () {
-    function callback(e) {
-      if (e.code === "Escape") {
-        onCloseMovie();
-      }
-    }
+  useKey("Escape", onCloseMovie);
 
-    document.addEventListener("keydown", callback);
+  // useEffect(function () {
+  //   function callback(e) {
+  //     if (e.code === "Escape") {
+  //       onCloseMovie();
+  //     }
+  //   }
 
-    return function () {
-      document.removeEventListener("keydown", callback);
-    };
-  }, []);
+  //   document.addEventListener("keydown", callback);
+
+  //   return function () {
+  //     document.removeEventListener("keydown", callback);
+  //   };
+  // }, [onCloseMovie]);
 
   useEffect(
     function () {

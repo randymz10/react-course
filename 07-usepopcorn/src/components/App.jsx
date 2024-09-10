@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // import tempMovieData from "../data/tempMovieData.js";
 // import tempWatchedData from "../data/tempWatchedData";
 import Main from "./Main/Main";
@@ -13,23 +13,25 @@ import Loader from "./Loader.jsx";
 import ErrorMessage from "./ErrorMessage.jsx";
 import MovieDetails from "./MovieDetails.jsx";
 import { useMovies } from "../useMovies.js";
+// import { useLocalStorageState } from "../useLocalStorageState.js";
 
-const KEY = "4accf5d1";
+// const KEY = "4accf5d1";
 
 export default function App() {
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(null);
-  const [watched, setWatched] = useState([]);
   // const [movies, setMovies] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
   // const [error, setError] = useState("");
 
+  const [watched, setWatched] = useState([]);
   // const [watched, setWatched] = useState(function () {
   //   const storedValue = JSON.parse(localStorage.getItem("watched"));
   //   return storedValue;
   // });
 
-  const {movies, isLoading, error} = useMovies(query)
+  const { movies, isLoading, error } = useMovies(query);
+  // const { watched, setWatched } = useLocalStorageState([], "watched");
 
   function handleSelectMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
@@ -48,10 +50,6 @@ export default function App() {
   function handleDeleteWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
-
-  useEffect(() => {
-    localStorage.setItem("watched", JSON.stringify(watched));
-  }, [watched]);
 
   return (
     <>
