@@ -9,7 +9,7 @@ function Options({ question, dispatch, answer }) {
           ${index === answer ? "answer" : ""} 
           ${
             hasAnswered
-              ? index === option.correctOption
+              ? index === question.correctOption
                 ? "correct"
                 : "wrong"
               : ""
