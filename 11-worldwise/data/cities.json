@@ -37,14 +37,25 @@
       "id": "98443197"
     },
     {
-      "id": "3333",
-      "cityName": "Vila Nova de Foz Coa",
+      "id": "7a4a",
+      "cityName": "Fundao",
       "country": "Portugal",
-      "date": "2024-12-27T20:32:27.311Z",
-      "notes": "Lorem ipsum door",
+      "date": "2024-12-27T20:55:19.096Z",
+      "notes": "asdasdas",
       "position": {
-        "lat": "41.042449954470854",
-        "lng": "-7.141113281250001"
+        "lat": "40.14119518274871",
+        "lng": "-7.602539062500001"
+      }
+    },
+    {
+      "id": "ad1a",
+      "cityName": "Alhambra",
+      "country": "Spain",
+      "date": "2024-12-27T20:55:23.729Z",
+      "notes": "asdasd",
+      "position": {
+        "lat": "39.090940781597865",
+        "lng": "-2.8784179687500004"
       }
     }
   ]

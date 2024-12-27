@@ -71,6 +71,7 @@ function Form() {
     const newCity = {
       cityName,
       country,
+      emoji,
       date,
       notes,
       position: { lat, lng },
