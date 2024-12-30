@@ -37,25 +37,27 @@
       "id": "98443197"
     },
     {
-      "id": "7a4a",
-      "cityName": "Fundao",
-      "country": "Portugal",
-      "date": "2024-12-27T20:55:19.096Z",
-      "notes": "asdasdas",
+      "id": "d7e2",
+      "cityName": "Cabanas de Sayago",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-12-30T20:00:19.894Z",
+      "notes": "asdasd",
       "position": {
-        "lat": "40.14119518274871",
-        "lng": "-7.602539062500001"
+        "lat": "41.32732632036624",
+        "lng": "-5.77880859375"
       }
     },
     {
-      "id": "ad1a",
-      "cityName": "Alhambra",
-      "country": "Spain",
-      "date": "2024-12-27T20:55:23.729Z",
-      "notes": "asdasd",
+      "id": "fee0",
+      "cityName": "Carupano",
+      "country": "Venezuela (Bolivarian Republic of)",
+      "emoji": "🇻🇪",
+      "date": "2024-12-30T20:01:32.199Z",
+      "notes": "Mi casita",
       "position": {
-        "lat": "39.090940781597865",
-        "lng": "-2.8784179687500004"
+        "lat": "10.641792213565175",
+        "lng": "-63.258059620857246"
       }
     }
   ]
