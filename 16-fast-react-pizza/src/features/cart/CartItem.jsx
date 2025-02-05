@@ -3,7 +3,7 @@ import DeleteItem from "./DeleteItem";
 import PropTypes from "prop-types";
 import UpdateItemQuantity from "./UpdateItemQuantity";
 import { useSelector } from "react-redux";
-import { getCurrentQuantityById } from "./carSlice";
+import { getCurrentQuantityById } from "./cartSlice";
 
 function CartItem({ item }) {
   const { pizzaId, name, quantity, totalPrice } = item;

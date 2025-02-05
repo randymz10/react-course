@@ -4,7 +4,7 @@ import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
 import EmptyCart from "../cart/EmptyCart";
 import { useSelector } from "react-redux";
-import { clearCart, getCart, getTotalCartPrice } from "../cart/carSlice";
+import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice";
 import store from "../../store";
 import { formatCurrency } from "../../utils/helpers";
 // https://uibakery.io/regex-library/phone-number
@@ -110,7 +110,9 @@ export async function action({ request }) {
   if (Object.keys(errors).length > 0) return errors;
 
   const newOrder = await createOrder(order);
+
   store.dispatch(clearCart());
+  
   return redirect(`/order/${newOrder.id}`);
 }
 
