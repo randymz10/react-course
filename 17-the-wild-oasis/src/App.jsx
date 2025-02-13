@@ -1,9 +1,13 @@
+import GlobalStyles from "./styles/GlobalStyles";
+import Button from './ui/Button';
 function App() {
   return (
-    <div>
-      Hello App
-    </div>
-  )
+    <>
+      <GlobalStyles />
+      <Button> Boton</Button>
+      <div>Hello App</div>
+    </>
+  );
 }
 
-export default App
+export default App;
