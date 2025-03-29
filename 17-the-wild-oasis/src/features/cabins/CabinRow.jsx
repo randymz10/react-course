@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { deleteCabin } from "../../services/apiCabins";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import Button from "../../ui/Button";
 
 const TableRow = styled.div`
   display: grid;
@@ -74,15 +75,16 @@ function CabinRow({ cabin }) {
       <div>Fits up to {maxCapacity} guests</div>
       <Price>${formatCurrency(regularPrice)}</Price>
       <Discount>{formatCurrency(discount)}% off</Discount>
-      <button onClick={() => mutate(cabinId)} disabled={idDeleting}>
+      <Button variation="primary" size="medium" onClick={() => mutate(cabinId)} disabled={idDeleting}>
         Delete
-      </button>
+      </Button>
     </TableRow>
   );
 }
 
 CabinRow.propTypes = {
   cabin: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     maxCapacity: PropTypes.number.isRequired,
     regularPrice: PropTypes.number.isRequired,
